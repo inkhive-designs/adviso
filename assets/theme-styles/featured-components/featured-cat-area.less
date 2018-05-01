@@ -1,0 +1,47 @@
+/* Second Featured Area */
+.featposts-cat {
+  margin-top: 25px;
+  .item {
+    position: relative;
+    .item-container {
+      overflow: hidden;
+      border: 10px solid #fff;
+      position: relative;
+      z-index: 10;
+      margin-bottom: 30px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      .featured-thumb {
+        @media screen and (min-width: 768px) {
+          img {
+            .transition(0.7s all ease);
+            width: 100%;
+          }
+          &:hover {
+            img {
+              .transition(0.7s all ease);
+              transform:scale(1.1);
+            }
+          }
+        }
+        @media screen and (max-width: 768px) {
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .out-thumb {
+        background: #fff;
+        position: relative;
+        h3 {
+          margin: 0;
+          padding: 7px 0;
+          a {
+            font-size: 17px;
+            color: #666;
+          }
+        }
+      }
+    }
+  }
+
+}

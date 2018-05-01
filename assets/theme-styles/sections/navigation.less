@@ -1,0 +1,194 @@
+/* -------- Nav Menu ---------- */
+.menu-wrapper {
+  position: relative;
+  top: 11px;
+}
+#site-navigation {
+  display: inline-block;
+  width: auto;
+  float: right;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+  ul {
+    li {
+      float: none;
+      display: inline-block;
+      a {
+        padding: 10px 20px;
+        color: @background;
+        border-bottom: 3px solid transparent;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 12px;
+        .transition( 0.2s all ease );
+        margin-right: 1px;
+        margin-bottom: 5px;
+        @media screen and (max-width: 1200px) {
+          padding: 10px 16px;
+        }
+        @media screen and (max-width: 991px) {
+          padding: 8px 5px;
+        }
+
+      }
+      &:hover {
+        a {
+          background: @s-accent;
+          color: @onaccent;
+          .transition(0.3s all ease);
+          transform: skewX(-10deg);
+          border-bottom: 3px solid @accent;
+        }
+      }
+      ul li .menu-desc {
+        display: none;
+      }
+      ul.sub-menu, ul.children {
+        top: 100%;
+        display: block;
+        .transition( 0.4s all ease );
+        perspective: 1000;
+        -webkit-perspective: 1000;
+        transform-origin: top;
+        -webkit-transform-origin: top;
+        transform: perspective(350px) translateX(20px);
+        -webkit-transform: perspective(350px) translateX(20px);
+        -moz-transform: perspective(350px) translateX(20px);
+        opacity: 0;
+        visibility: hidden;
+        text-align: left;
+        padding: 5px 0;
+        border-radius: 0;
+        box-shadow: none;
+        a {
+          background: @s-accent;
+          color: white;
+          border-radius: 0px;
+          margin-right: 0px;
+          text-transform: none;
+        }
+        li ul {
+          transform-origin: left;
+          -webkit-transform-origin: left;
+          .transition( 0.4s all ease );
+          left: 100%;
+          top: 0;
+          opacity: 0 !important;
+          li ul {
+            display: none !important;
+          }
+        }
+        li:hover {
+          .transition(0.2s all ease);
+          /* -webkit-transition: 0.2s all ease !important; */
+          ul {
+            opacity: 1 !important;
+          }
+        }
+        a {
+          padding: 5px 15px;
+          font-weight: lighter;
+          font-size: 12px;
+          transition: 0.4s all ease;
+          &:hover {
+            transform-origin: left;
+            text-decoration: underline;
+          }
+        }
+      }
+      &:hover {
+        .transition(0.4s all ease);
+        -webkit-transition: 0.4s all ease !important;
+        ul.sub-menu, ul.children {
+          display: block;
+          transform: translateX(0px);
+          -webkit-transform: translateX(0px);
+          opacity: 1;
+          visibility: visible;
+          a:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    /* for the Currently active page */
+    .current_page_item > a, .current-menu-item > a, .current_page_ancestor > a {
+      background: @s-accent;
+      color: white;
+      transform: skewX(-10deg);
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .fa {
+    padding: 0 5px 0 0;
+  }
+  .menu-desc {
+    font-size: 12px;
+    font-weight: 300;
+    color: #eee;
+    display: inline-block;
+    margin-top: -5px;
+    font-style: italic;
+    text-transform: lowercase;
+  }
+  .current_page_item > a,
+  .current-menu-item > a,
+  .current_page_ancestor > a {
+    color: @accent;
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  text-align: right;
+  .menu-link {
+    padding: 5px;
+    font-size: 32px;
+    color: @onaccent;
+    width: 53px;
+    text-align: center;
+    vertical-align: middle;
+    height: 53px;
+    display: inline-block;
+    background: @s-accent;
+    border-radius: 10px;
+    margin: 10px;
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+    &:visited {
+      color: @onaccent;
+      text-decoration: none;
+    }
+  }
+
+  #menu {
+    z-index: 999;
+    background: lighten(@top-bar, 10%);
+    border-left: 2px solid @accent;
+    text-align: left;
+    overflow-y: auto;
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+    ul {
+      margin: 0;
+      li {
+        list-style: none;
+        padding: 5px 0px;
+        a {
+          display: block;
+          color: @onaccent;
+          padding: 10px 15px;
+        }
+        ul {
+          padding-left: 15px;
+          background: lighten(@top-bar, 15%);
+        }
+      }
+    }
+  }
+}

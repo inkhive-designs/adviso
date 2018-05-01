@@ -1,0 +1,76 @@
+/* Second Featured Area */
+.featposts {
+  margin-top: 25px;
+  .item {
+    position: relative;
+    @media screen and (max-width:768px) {
+      margin-bottom: 55px;
+    }
+    .item-container {
+      overflow: hidden;
+      border: 10px solid #fff;
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      .featured-thumb {
+        @media screen and (min-width: 768px) {
+          img {
+            .transition(0.5s all ease);
+            width: 100%;
+          }
+          &:hover {
+            img {
+              .transition(0.5s all ease);
+              transform:scale(1.2);
+            }
+          }
+        }
+        @media screen and (max-width: 768px) {
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .out-thumb {
+        background: #fff;
+        position: relative;
+        h3 {
+          margin: 0;
+          border-bottom: 1px solid #f3f3f3;
+          padding: 7px 0;
+          a {
+            font-size: 17px;
+            color: #666;
+          }
+        }
+        .postedon, .postedby {
+          display: inline-block;
+          padding: 5px 0;
+          i {
+            margin-right: 5px;
+            color: @accent;
+          }
+          a {
+            color: #666;
+          }
+        }
+        .postedby {
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+    .item-container-background {
+      position: absolute;
+      background: #fff;
+      width: 92%;
+      left: 14px;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transform: rotate(2.1deg);
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+  }
+
+}
