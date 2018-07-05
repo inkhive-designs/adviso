@@ -3,7 +3,7 @@
 // CREATE THE FCA PANEL
 function adviso_customize_register_fp( $wp_customize ) {
     $wp_customize->add_panel('adviso_featured_posts', array(
-            'title' => __('Featured Content Areas', 'adviso'),
+            'title' => __('Featured Post Areas', 'adviso'),
             'priority' => 30,
         )
     );
@@ -21,7 +21,7 @@ function adviso_customize_register_fp( $wp_customize ) {
         'adviso_featposts_enable',
         array(
             'sanitize_callback' => 'adviso_sanitize_text',
-            'default' => 'enable'
+            'default' => 'disable'
         )
     );
 

@@ -69,17 +69,22 @@ if ( ! function_exists( 'adviso_setup' ) ) :
         // Add theme support for selective refresh for widgets.
         add_theme_support( 'customize-selective-refresh-widgets' );
 
+        add_image_size('adviso-sq-thumb', 600,600, true );
+        add_image_size('adviso-pop-thumb',330, 220, true );
         /**
          * Add support for core custom logo.
          *
          * @link https://codex.wordpress.org/Theme_Logo
          */
         add_theme_support( 'custom-logo', array(
-            'height'      => 250,
-            'width'       => 250,
+            'height'      => 80,
+            'width'       => 280,
             'flex-width'  => true,
             'flex-height' => true,
         ) );
+
+        //Declare woocommerce support
+        add_theme_support('woocommerce');
     }
 endif;
 add_action( 'after_setup_theme', 'adviso_setup' );

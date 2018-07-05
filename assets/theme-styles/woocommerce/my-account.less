@@ -1,0 +1,66 @@
+.woocommerce-MyAccount-navigation {
+  ul {
+    margin: 0;
+    li {
+      list-style: none;
+      padding: 6px 20px;
+      background: @s-accent;
+      margin-bottom: 5px;
+      color: @onaccent;
+      a {
+        color: @onaccent;
+      }
+    }
+    li.is-active {
+      background: @accent;
+    }
+    li.woocommerce-MyAccount-navigation-link--dashboard:before {
+      content: "\f0e4";
+      font-family: "FontAwesome";
+      margin-right: 5px;
+    }
+    li.woocommerce-MyAccount-navigation-link--orders:before {
+      content: "\f07a";
+      font-family: "FontAwesome";
+      margin-right: 5px;
+    }
+    li.woocommerce-MyAccount-navigation-link--downloads:before {
+      content: "\f019";
+      font-family: "FontAwesome";
+      margin-right: 5px;
+    }
+    li.woocommerce-MyAccount-navigation-link--edit-address:before {
+      content: "\f041";
+      font-family: "FontAwesome";
+      margin-right: 5px;
+    }
+    li.woocommerce-MyAccount-navigation-link--edit-account:before {
+      content: "\f007";
+      font-family: "FontAwesome";
+      margin-right: 5px;
+    }
+    li.woocommerce-MyAccount-navigation-link--customer-logout:before {
+      content: "\f023";
+      font-family: "FontAwesome";
+      margin-right: 5px;
+    }
+  }
+}
+.woocommerce-MyAccount-content {
+  background: lighten(@accent, 60%);
+  padding: 15px;
+  border-top: 3px solid @accent;
+  .woocommerce-info {
+    border-top: none;
+    background: none;
+    margin: 0 !important;
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+    &:before {
+      color: @accent;
+    }
+    .woocommerce-Button {
+      margin-left: 5px;
+    }
+  }
+}

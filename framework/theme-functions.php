@@ -40,7 +40,7 @@ function adviso_pagination() {
 }
 
 /*
-** Function to check if Sidebar is enabled on Current Page 
+** Function to check if Sidebar is enabled on Current Page
 */
 
 function adviso_load_sidebar() {
@@ -93,7 +93,7 @@ function adviso_secondary_class() {
 add_action('adviso_secondary-width', 'adviso_secondary_class');
 
 /*
-** Function to Get Theme Layout 
+** Function to Get Theme Layout
 */
 function adviso_get_blog_layout(){
     $ldir = 'framework/layouts/content';
@@ -118,3 +118,9 @@ function adviso_get_main_class(){
 add_action('adviso_main-class', 'adviso_get_main_class');
 
 
+/*
+** Load WooCommerce Compatibility FIle
+*/
+if ( class_exists('woocommerce') ) :
+    require get_template_directory() . '/framework/woocommerce.php';
+endif;

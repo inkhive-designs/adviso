@@ -6,6 +6,8 @@
 ?>
 </div><!--.mega-container-->
 
+<?php get_template_part('framework/featured-components/featured-carousel', 'post' ); ?>
+
 <?php if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') ) : ?>
     <div id="footer-sidebar" class="widget-area">
         <div class="container">

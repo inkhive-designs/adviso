@@ -2,7 +2,7 @@
 
 <div class="featposts container-fluid container">
     <div class="section-title title-font">
-        <?php echo esc_html( get_theme_mod('adviso_featposts_heading',__('Trending','adviso')) ); ?>
+        <span><?php echo esc_html( get_theme_mod('adviso_featposts_heading',__('Trending','adviso')) ); ?></span>
     </div>
 
 	<?php if ( have_posts() ) : ?>

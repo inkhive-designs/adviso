@@ -5,9 +5,9 @@
 function adviso_scripts() {
     wp_enqueue_style( 'adviso-style', get_stylesheet_uri() );
 
-    wp_enqueue_style('adviso-title-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", get_theme_mod('adviso_title_font1', 'Lato') ).':100,300,400,700' );
+    wp_enqueue_style('adviso-title-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", get_theme_mod('adviso_title_font1', 'Arvo') ).':100,300,400,700' );
 
-    wp_enqueue_style('adviso-body-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", get_theme_mod('adviso_body_font1', 'Open Sans') ).':100,300,400,700' );
+    wp_enqueue_style('adviso-body-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", get_theme_mod('adviso_body_font1', 'Ubuntu') ).':100,300,400,700' );
     
     //FontAwesome
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css' );
@@ -24,8 +24,11 @@ function adviso_scripts() {
     //Hover Styles
     wp_enqueue_style( 'hover-style', get_template_directory_uri() . '/assets/css/hover.min.css' );
 
+    //Owl Carousel
+    wp_enqueue_style( 'owl', get_template_directory_uri() . '/assets/css/owl.carousel.min.css' );
+
     //Main CSS
-    wp_enqueue_style( 'adviso-main-theme-style', get_template_directory_uri() . '/assets/theme-styles/css/'.get_theme_mod('adviso_skin', 'default').'.css', array(), null );
+    wp_enqueue_style( 'adviso-main-theme-style', get_template_directory_uri() . '/assets/theme-styles/css/'.get_theme_mod('adviso_skins', 'default').'.css', array(), null );
 
     wp_enqueue_script( 'adviso-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

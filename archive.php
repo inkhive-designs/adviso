@@ -10,17 +10,17 @@
 get_header(); ?>
 
     <div id="primary" class="content-area <?php do_action('adviso_primary-width') ?>">
+        <header class="page-header">
+            <?php
+            the_archive_title( '<h2 class="page-title">', '</h2>' );
+            the_archive_description( '<div class="archive-description">', '</div>' );
+            ?>
+        </header><!-- .page-header -->
         <main id="main" class="site-main <?php do_action('adviso_main-class') ?>" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h2 class="page-title">', '</h2>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */

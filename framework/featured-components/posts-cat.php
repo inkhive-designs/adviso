@@ -6,7 +6,7 @@
             </span>
         </div>
 
-        <?php for( $i=1; $i<=6; $i++ ) : ?>
+        <?php for( $i=1; $i<=3; $i++ ) : ?>
             <div class="item col-md-4 col-sm-4 col-xs-12">
                 <a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"></a>
                 <div class="item-container">

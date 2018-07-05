@@ -48,7 +48,7 @@ function adviso_customize_register_fp_cat( $wp_customize ) {
         )
     );
 
-    for( $x = 1; $x <= 6; $x++ ):
+    for( $x = 1; $x <= 3; $x++ ):
 
     $wp_customize->add_setting(
         'adviso_featposts_category_'.$x,

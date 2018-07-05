@@ -16,11 +16,11 @@
 			
 		<div class="out-thumb col-md-8 col-sm-8">
 			<header class="entry-header">
-				<h3 class="entry-title title-font"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-				<div class="postedon"><?php adviso_posted_on(); ?></div>
-				<span class="entry-excerpt"><?php echo substr(get_the_excerpt(),0,200).(get_the_excerpt() ? "..." : "" ); ?></span>
-				<span class="readmore"><a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More','adviso'); ?></a></span>
-			</header><!-- .entry-header -->
+                <h3 class="entry-title title-font"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+            </header><!-- .entry-header -->
+            <div class="postedon"><?php adviso_posted_on(); ?></div>
+            <span class="entry-excerpt"><?php echo substr(get_the_excerpt(),0,200).(get_the_excerpt() ? "..." : "" ); ?></span>
+            <span class="readmore"><a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More','adviso'); ?></a></span>
 		</div><!--.out-thumb-->
 			
 		

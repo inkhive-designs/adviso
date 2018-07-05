@@ -21,7 +21,11 @@
 
     <?php get_template_part('framework/featured-components/featured', 'posts' ); ?>
 
+    <?php get_template_part('framework/featured-components/featured-carousel', 'product' ); ?>
+
     <?php get_template_part('framework/featured-components/posts', 'cat' ); ?>
+
+    <?php get_template_part('framework/featured-components/featured-product', 'triangles'); ?>
 
     <div class="mega-container">
 

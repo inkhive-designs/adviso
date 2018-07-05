@@ -1,5 +1,6 @@
 <?php
 function adviso_customize_register_layouts( $wp_customize ) {
+    $wp_customize->get_section('background_image')->panel = 'adviso_design_panel';
     // Layout and Design
     $wp_customize->add_panel( 'adviso_design_panel', array(
         'priority'       => 40,
@@ -20,7 +21,10 @@ function adviso_customize_register_layouts( $wp_customize ) {
 
     $wp_customize->add_setting(
         'adviso_blog_layout',
-        array( 'sanitize_callback' => 'adviso_sanitize_blog_layout' )
+        array(
+            'default' => 'grid',
+            'sanitize_callback' => 'adviso_sanitize_blog_layout',
+        )
     );
 
     function adviso_sanitize_blog_layout( $input ) {
