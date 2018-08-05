@@ -2,18 +2,13 @@
 //FEATURED POSTS
 // CREATE THE FCA PANEL
 function adviso_customize_register_fp( $wp_customize ) {
-    $wp_customize->add_panel('adviso_featured_posts', array(
-            'title' => __('Featured Post Areas', 'adviso'),
-            'priority' => 30,
-        )
-    );
 
     $wp_customize->add_section(
         'adviso_featposts',
         array(
             'title'     => __('Featured Posts','adviso'),
             'priority'  => 10,
-            'panel' => 'adviso_featured_posts'
+            'panel' 	=> 'adviso_featured_posts'
         )
     );
 
@@ -32,7 +27,7 @@ function adviso_customize_register_fp( $wp_customize ) {
             array(
                 'settings'		=> 'adviso_featposts_enable',
                 'section'		=> 'adviso_featposts',
-                'label'    => __( 'Enable Feature Posts.','adviso' ),
+                'label'    => __( 'Enable Feature Category on Front Page.','adviso' ),
                 'enable_disable' 	=> array(
                     'enable' => __( 'Enabled', 'adviso' ),
                     'disable' => __( 'Disabled', 'adviso' )
@@ -51,7 +46,7 @@ function adviso_customize_register_fp( $wp_customize ) {
         array(
             'settings' => 'adviso_featposts_heading',
             'section' => 'adviso_featposts',
-            'label' => __('Heading For Featured Area', 'adviso'),
+            'label' => __('Heading For Featured Category', 'adviso'),
             'type' => 'text'
         )
     );
@@ -66,11 +61,11 @@ function adviso_customize_register_fp( $wp_customize ) {
             $wp_customize,
             'adviso_featposts_cat',
             array(
-                'label'    => __('Category For Featured Posts','adviso'),
+                'label'    => __('Select the Category','adviso'),
                 'settings' => 'adviso_featposts_cat',
                 'section'  => 'adviso_featposts'
             )
         )
     );
 }
-add_action( 'customize_register', 'adviso_customize_register_fp' );
+add_action( 'customize_register', 'adviso_customize_register_fp', 15 );

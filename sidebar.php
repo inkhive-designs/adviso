@@ -13,7 +13,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 
 if ( adviso_load_sidebar() ) : ?>
-<aside id="secondary" class="widget-area <?php do_action('adviso_secondary-width') ?>" role="complementary">
+<div id="secondary" class="widget-area <?php do_action('adviso_secondary-width') ?>" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+</div><!-- #secondary -->
 <?php endif; ?>

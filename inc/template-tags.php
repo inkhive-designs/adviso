@@ -26,7 +26,7 @@ if ( ! function_exists( 'adviso_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'adviso' ),
+			esc_html_x( '%s', 'post date', 'adviso' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -57,6 +57,10 @@ if ( ! function_exists( 'adviso_posted_on' ) ) :
     }
     
 endif;
+
+function adviso_time_ago() {
+	return human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ).' '.__( 'ago' );
+}
 
 if ( ! function_exists( 'adviso_posted_by' ) ) :
 	/**

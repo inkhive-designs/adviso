@@ -23,7 +23,9 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php adviso_post_thumbnail(); ?>
+	<div class="search-thumb">
+		<?php adviso_post_thumbnail(); ?>
+	</div>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>

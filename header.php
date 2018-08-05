@@ -15,17 +15,12 @@
 
     <!-- Masthead -->
     <?php get_template_part('modules/header/masthead'); ?>
-
-    <!--- Contact Info ----->
-    <?php get_template_part('modules/header/contact', 'info'); ?>
-
-    <?php get_template_part('framework/featured-components/featured', 'posts' ); ?>
-
-    <?php get_template_part('framework/featured-components/featured-carousel', 'product' ); ?>
-
-    <?php get_template_part('framework/featured-components/posts', 'cat' ); ?>
-
-    <?php get_template_part('framework/featured-components/featured-product', 'triangles'); ?>
+    
+    
+    <?php if ( is_front_page() ) :
+	    adviso_sorter();
+	endif; ?>
+		
 
     <div class="mega-container">
 

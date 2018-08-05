@@ -4,10 +4,6 @@
 .woocommerce-checkout {
   .checkout {
     .col-2 {
-      h3#ship-to-different-address {
-        float: left;
-        clear: none;
-      }
 
       .notes {
         clear: left;
@@ -47,10 +43,14 @@
       list-style: none outside;
 
       li {
-        line-height: 2;
+        line-height: 4;
         text-align: left;
         margin: 0;
         font-weight: normal;
+        
+        label {
+	        .title-font;
+        }
 
         input {
           margin: 0 1em 0 0;
@@ -77,13 +77,13 @@
     div.payment_box {
       position: relative;
       width: 96%;
-      padding: 1em 2%;
+      padding: 1em 4%;
       margin: 1em 0 1em 0;
       font-size: 0.92em;
-      border-radius: 2px;
-      line-height: 1.5;
+      font-weight: 300;
+      border-radius: 0px;
       background-color: darken( @background, 5% );
-      color: @content;
+      color: darken( @background, 50%);
 
       input.input-text, textarea {
         border-color: darken( @background, 15% );
@@ -154,7 +154,7 @@
         border-left-color: transparent;
         border-top-color: transparent;
         position: absolute;
-        top: -3px;
+        top: 0px;
         left: 0;
         margin: -1em 0 0 2em;
       }
@@ -183,17 +183,13 @@
     border: solid 1px darken(@background,10px);
     background: @background;
   }
-  .woocommerce-billing-fields, .woocommerce-shipping-fields {
-    h3 {
-      font-weight: bold;
-      font-size: 14px;
-      label {
-        display: inline-block;
-      }
-    }
-  }
   .woocommerce-info {
-    background: lighten(@accent, 60%);
+    background: darken( @background, 5%);
+    color: #333;
+    a {
+	    color: @s-accent;
+	    font-weight: 700;
+    }
     &:before {
       color: @accent;
     }

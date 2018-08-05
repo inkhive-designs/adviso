@@ -1,12 +1,7 @@
 <?php
 function adviso_customize_register_fproduct_carousel($wp_customize) {
     if ( class_exists('woocommerce') ) :
-
-    $wp_customize->add_panel('adviso_featured_products', array(
-            'title' => __('Featured Product Areas', 'adviso'),
-            'priority' => 35,
-        )
-    );
+    
     
     $wp_customize->add_section(
         'adviso_product_eta_section',
@@ -73,4 +68,4 @@ function adviso_customize_register_fproduct_carousel($wp_customize) {
     );
     endif;
 }
-add_action('customize_register', 'adviso_customize_register_fproduct_carousel');
+add_action('customize_register', 'adviso_customize_register_fproduct_carousel', 25 );

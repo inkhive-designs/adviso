@@ -3,7 +3,8 @@ function adviso_customize_register_fcarousel($wp_customize) {
     $wp_customize->add_section(
         'adviso_eta_section',
         array(
-            'title'     => __('Featured Posts Carousel','adviso'),
+            'title'     => __('Featured Posts - Carousel','adviso'),
+            'description'	=> __('Set up the Featured Category Carousel in the Footer of the site', 'adviso'),
             'priority'  => 10,
             'panel'     => 'adviso_featured_posts'
         )
@@ -24,7 +25,7 @@ function adviso_customize_register_fcarousel($wp_customize) {
             array(
                 'settings'		=> 'adviso_eta_enable',
                 'section'		=> 'adviso_eta_section',
-                'label'    => __( 'Enable Feature Posts Carousel.','adviso' ),
+                'label'    => __( 'Enable Feature Category Carousel.','adviso' ),
                 'enable_disable' 	=> array(
                     'enable' => __( 'Enabled', 'adviso' ),
                     'disable' => __( 'Disabled', 'adviso' )
@@ -41,7 +42,7 @@ function adviso_customize_register_fcarousel($wp_customize) {
     $wp_customize->add_control(
         'adviso_eta_title', array(
             'settings' => 'adviso_eta_title',
-            'label'    => __( 'Title','adviso' ),
+            'label'    => __( 'Title for the Carousel','adviso' ),
             'section'  => 'adviso_eta_section',
             'type'     => 'text',
         )
@@ -57,7 +58,7 @@ function adviso_customize_register_fcarousel($wp_customize) {
             $wp_customize,
             'adviso_eta_cat',
             array(
-                'label'    => __('Posts Category.','adviso'),
+                'label'    => __('Select the category','adviso'),
                 'settings' => 'adviso_eta_cat',
                 'section'  => 'adviso_eta_section'
             )

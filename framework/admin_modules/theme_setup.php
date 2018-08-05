@@ -71,6 +71,8 @@ if ( ! function_exists( 'adviso_setup' ) ) :
 
         add_image_size('adviso-sq-thumb', 600,600, true );
         add_image_size('adviso-pop-thumb',330, 220, true );
+        add_image_size('offer-thumb', 540, 340, true );
+        //add_image_size('product-thumb', 250, 400, true);
         /**
          * Add support for core custom logo.
          *
@@ -85,6 +87,10 @@ if ( ! function_exists( 'adviso_setup' ) ) :
 
         //Declare woocommerce support
         add_theme_support('woocommerce');
+        add_theme_support( 'wc-product-gallery-zoom' );
+        add_theme_support( 'wc-product-gallery-lightbox' );
+        add_theme_support( 'wc-product-gallery-slider' );
+        
     }
 endif;
 add_action( 'after_setup_theme', 'adviso_setup' );

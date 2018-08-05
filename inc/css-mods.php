@@ -24,10 +24,14 @@ function adviso_custom_css_mods() {
         $custom_css .= "#masthead h1.site-title a { color: #".get_header_textcolor()."; }";
     endif;
 
-    if ( get_theme_mod('adviso_header_desccolor', '#ffff') ) :
-        $custom_css .= "#masthead h2.site-description { color: ".esc_html( get_theme_mod('adviso_header_desccolor','#ffff') ).";}";
+    if ( get_theme_mod('adviso_header_desccolor') ) :
+        $custom_css .= "#masthead h2.site-description { color: ".esc_html( get_theme_mod('adviso_header_desccolor') ).";}";
     endif;
+    
+    $custom_css	.=	"body.home #site-navigation ul.menu > li:not(.current-menu-item):not(.current_page_item):not(.current_page_ancestor) > a, body.home #adviso-search #search-icon,body.home #contact-info, body.home #top-cart, body.home #top-cart a { color: " . esc_html( get_theme_mod('adviso_top_bar_color', '#0000000') ) . ";}"; 
+    
 
+	
     wp_add_inline_style( 'adviso-main-theme-style', wp_strip_all_tags($custom_css) );
 
 

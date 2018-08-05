@@ -4,23 +4,24 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('col-md-12 col-sm-12 grid'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('grid'); ?>>
 
-		<div class="featured-thumb col-md-4 col-sm-4">
+		<div class="featured-thumb mdl-shadow--2dp col-md-4 col-sm-4 col-xs-6">
 			<?php if (has_post_thumbnail()) : ?>	
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail('adviso-pop-thumb', array(  'alt' => trim(strip_tags( $post->post_title )))); ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail('adviso-sq-thumb', array(  'alt' => trim(strip_tags( $post->post_title )))); ?></a>
 			<?php else: ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder2.jpg"; ?>" alt="<?php the_title(); ?>"></a>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder.png"; ?>" alt="<?php the_title(); ?>"></a>
 			<?php endif; ?>
+			
 		</div><!--.featured-thumb-->
 			
-		<div class="out-thumb col-md-8 col-sm-8">
-			<header class="entry-header">
-                <h3 class="entry-title title-font"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+		<div class="out-thumb col-md-8 col-sm-8 col-xs-6">
+			<header class="entry-header mdl-card__title">
+                <h3 class="entry-title title-font mdl-card__title-text"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
             </header><!-- .entry-header -->
             <div class="postedon"><?php adviso_posted_on(); ?></div>
-            <span class="entry-excerpt"><?php echo substr(get_the_excerpt(),0,200).(get_the_excerpt() ? "..." : "" ); ?></span>
-            <span class="readmore"><a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More','adviso'); ?></a></span>
+            <p class="entry-excerpt"><?php echo substr(get_the_excerpt(),0,80).(get_the_excerpt() ? "..." : "" ); ?></p>
+            <div class="readmore"><a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More','adviso'); ?></a></div>
 		</div><!--.out-thumb-->
 			
 		

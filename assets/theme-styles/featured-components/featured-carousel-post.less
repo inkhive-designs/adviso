@@ -1,31 +1,18 @@
 #featured-offers {
-  background: #efefef;
-  padding: 15px 0;
+	margin-bottom: 25px;
   .fg-item-container {
 	padding: 10px;
-	.featured-thumb {
-	  position: relative;
-	  .layer, .out-thumb {
-		opacity: 0;
-		transition: 0.8s all ease;
-	  }
-	  .out-thumb {
-		position: absolute;
-		top: 35%;
-		left: 0;
-		right: 0;
-		text-align: center;
-		color: @onaccent;
-		font-size: 18px;
-		font-weight: 600;
-	  }
-	  @media screen and (min-width: 768px) {
-		  &:hover {
-			  .out-thumb, .layer {
-				  opacity: 1;
-			  }
+	.fg-item {
+		width: auto;
+		.featured-thumb {
+		  position: relative;
+		  .out-thumb {
+			position: relative;
+			color: #aaa;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		  }
-	  }
+		}
 	}
   }
   h3 {
@@ -36,43 +23,5 @@
   }
   .owl-stage-outer {
 	z-index: 99;
-  }
-  .owl-nav {
-	position: absolute;
-	top: 30%;
-	width: 100%;
-	z-index: 9;
-	.owl-prev {
-	  float: left;
-	  left: -50px;
-	  background: @s-accent;
-	  border-radius: 50%;
-	  width: 45px;
-	  height: 45px;
-	  font-size: 22px;
-	  padding: 0;
-	  padding-top: 8px;
-	  position: relative;
-	  .fa-chevron-left:before {
-		content: "\f060";
-		font-family: "FontAwesome";
-	  }
-	}
-	.owl-next {
-	  float: right;
-	  right: -50px;
-	  background: @s-accent;
-	  border-radius: 50%;
-	  width: 45px;
-	  height: 45px;
-	  font-size: 22px;
-	  padding-right: 4px;
-	  padding-top: 8px;
-	  position: relative;
-	  .fa-chevron-right:before {
-		content: "\f061";
-		font-family: "FontAwesome";
-	  }
-	}
   }
 }

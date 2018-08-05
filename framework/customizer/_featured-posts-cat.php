@@ -4,7 +4,7 @@ function adviso_customize_register_fp_cat( $wp_customize ) {
     $wp_customize->add_section(
         'adviso_featposts_cat',
         array(
-            'title'     => __('Featured Posts Categories','adviso'),
+            'title'     => __('Featured Categories','adviso'),
             'priority'  => 20,
             'panel' => 'adviso_featured_posts'
         )

@@ -1,31 +1,33 @@
-#featured-offers {
+#featured-offers-product {
+	position: relative;
+/*
   background: #efefef;
   padding: 15px 0;
+*/
   .fg-item-container {
     padding: 10px;
     .featured-thumb {
       position: relative;
-      .layer {
-        opacity: 0;
-        transition: 0.8s all ease;
-      }
-      .out-thumb {
-        opacity: 0;
-        position: absolute;
-        top: 35%;
-        left: 0;
-        right: 0;
-        text-align: center;
-        color: @onaccent;
-        font-size: 18px;
-        font-weight: 600;
-        transition: 0.8s all ease;
-      }
-      &:hover {
-        .out-thumb, .layer {
-          opacity: 1;
-        }
-      }
+    }
+    .out-thumb {
+	    width: 100%;
+	    .product-title {
+		    display: inline-block;
+		    width: 55%;
+		    overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+	    }
+	    span.price {
+		    float: right;
+		    color: darken(@accent, 30%);
+		    del {
+				color: darken(@accent, 20%);
+			}
+			ins {
+				background: transparent;
+			}
+	    }
     }
   }
   h3 {
@@ -37,42 +39,65 @@
   .owl-stage-outer {
     z-index: 99;
   }
-  .owl-nav {
-    position: absolute;
-    top: 30%;
-    width: 100%;
-    z-index: 9;
-    .owl-prev {
-      float: left;
-      left: -50px;
-      background: @s-accent;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      font-size: 22px;
-      padding: 0;
-      padding-top: 8px;
-      position: relative;
-      .fa-chevron-left:before {
-        content: "\f060";
-        font-family: "FontAwesome";
-      }
-    }
-    .owl-next {
-      float: right;
-      right: -50px;
-      background: @s-accent;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      font-size: 22px;
-      padding-right: 4px;
-      padding-top: 8px;
-      position: relative;
-      .fa-chevron-right:before {
-        content: "\f061";
-        font-family: "FontAwesome";
-      }
-    }
-  }
+}
+
+//This code will work for Post Carousel as well
+.featured-section-area .owl-theme {
+	.owl-nav {
+	    position: absolute;
+	    top: 30%;
+	    width: 100%;
+	    z-index: 99;
+	    .prev {
+	      float: left;
+	      left: -20px;
+	      background: @s-accent;
+	      font-size: 22px;
+	      text-shadow: none;
+	      color: white;
+	      position: relative;
+	      &:hover {
+		      box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
+	      }
+	    }
+	
+	    .next {
+	      float: right;
+	      right: -20px;
+	      background: @s-accent;
+	      font-size: 22px;
+	      text-shadow: none;
+	      color: white;
+	      position: relative;
+			&:hover {
+		      box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
+	      }
+	    }
+	  }
+	.owl-dots {
+	margin-top: 10px;
+		button {
+			background: none;
+			border: none;
+			box-shadow: none;
+			padding: 0px;
+			span {
+				border-radius: 0px;
+				height: 3px;
+				width: 30px;
+				background: @accent;
+				outline: none;
+				margin: auto 1px;
+				&:hover {
+					background: lighten(@accent, 10%);
+				}
+			}
+			&.active, &:focus, &:hover {
+				outline: none;
+				span {
+					background: darken(@sbg, 20%);
+				}
+			}
+		}
+	}
 }

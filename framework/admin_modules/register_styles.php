@@ -26,6 +26,9 @@ function adviso_scripts() {
 
     //Owl Carousel
     wp_enqueue_style( 'owl', get_template_directory_uri() . '/assets/css/owl.carousel.min.css' );
+    
+    //Material Design CSS
+    wp_enqueue_style( 'drawer-material', get_template_directory_uri() . '/assets/css/material.min.css' );
 
     //Main CSS
     wp_enqueue_style( 'adviso-main-theme-style', get_template_directory_uri() . '/assets/theme-styles/css/'.get_theme_mod('adviso_skins', 'default').'.css', array(), null );
@@ -34,8 +37,11 @@ function adviso_scripts() {
 
     //External Js
     wp_enqueue_script( 'adviso-external', get_template_directory_uri() . '/js/external.js', array('jquery'), '20120207', true );
+    
+    wp_enqueue_script( 'drawer-material-js', get_template_directory_uri() . '/js/material.js', array('jquery'), '09457243', true );
 
     wp_enqueue_script( 'adviso-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+    
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );

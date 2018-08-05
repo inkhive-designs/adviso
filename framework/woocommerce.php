@@ -80,22 +80,22 @@ function adviso_change_breadcrumb_delimiter( $defaults ) {
 add_action('woocommerce_before_main_content', 'adviso_single_custom_header', 1 );
 
 function adviso_single_custom_header() {
+	
     if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
         <div class="header-title col-md-12">
             <span><?php woocommerce_page_title(); ?></span>
         </div>
-    <?php endif; ?>
-
-    <div id="primary-mono" class="content-area <?php do_action('adviso_primary-width') ?>">
-        <main id="main" class="site-main" role="main">
-    <?php
+    <?php endif;
+	    
 }
 
+/*
 add_action( 'woocommerce_after_main_content', 'adviso_single_custom_footer', 50 );
 
 function adviso_single_custom_footer() {
     echo "</main></div>";
 }
+*/
 
 
 /**
@@ -146,3 +146,85 @@ function adviso_header_add_to_cart_fragment( $fragments ) {
 	
 	return $fragments;
 }
+
+
+// Breadcrumb outside the #primary div
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+add_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 5 );
+
+
+/**
+ *
+ * Setting Up the Product Thumbnail Layout
+ *
+**/
+
+add_action( 'woocommerce_before_shop_loop_item_title', 'adviso_product_title_wrapper_start', 15 );
+function adviso_product_title_wrapper_start() {
+	 echo "<div class='product-title-wrapper'>";
+}
+
+add_action( 'woocommerce_shop_loop_item_title', 'adviso_product_title_wrapper_end', 11 );
+function adviso_product_title_wrapper_end() {
+	echo "</div>";
+}
+
+add_action( 'woocommerce_shop_loop_item_title', 'adviso_product_meta_wrapper_start', 11 );
+function adviso_product_meta_wrapper_start() {
+	echo "<div class='product-meta-wrapper'>";
+}
+
+add_action( 'woocommerce_after_shop_loop_item_title', 'adviso_product_meta_wrapper_end', 10 );
+function adviso_product_meta_wrapper_end() {
+	echo "</div>";
+}
+
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+
+add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+
+
+
+// Insert a div for Image and Sale Flash
+add_action( 'woocommerce_before_shop_loop_item', 'adviso_product_thumbnail_container_start', 11 );
+function adviso_product_thumbnail_container_start() {
+	
+	echo '<div class="product-thumb-container">';
+	
+}
+
+add_action( 'woocommerce_before_shop_loop_item_title', 'adviso_product_thumbnail_container_end', 11 );
+function adviso_product_thumbnail_container_end() {
+	
+	echo '</div>';
+	
+}
+
+add_filter( 'woocommerce_loop_add_to_cart_args', 'adviso_material_classes', 10, 2 );
+function adviso_material_classes( $args, $product ) {
+	
+	$args['class']	.=	' hello mdl-button mdl-js-button mdl-button--raised mdl-button--colored';
+	
+	return $args;
+}
+
+add_filter( 'gettext', 'adviso_custom_view_cart', 20, 3 );
+function adviso_custom_view_cart( $translated_text, $text, $domain ) {
+    switch ( strtolower( $translated_text ) ) {
+        case 'view cart' :
+            $translated_text = '';
+            break;
+    }
+    return $translated_text;
+}
+
+
+/**
+ *
+ * Setting Up the Single Product Page
+ *
+**/
+
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+
+add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 3 );

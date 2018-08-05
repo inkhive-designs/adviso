@@ -100,9 +100,14 @@ if (class_exists('WP_Customize_Control')) {
 
 
 if( class_exists( 'WP_Customize_Control' ) ):
-class Adviso_Switch_Control extends WP_Customize_Control{
+class Adviso_Switch_Control extends WP_Customize_Control {
+	
+	
     public $type = 'switch';
+    
+    
     public $enable_disable = array();
+    
 
     public function __construct($manager, $id, $args = array() ){
         $this->enable_disable = $args['enable_disable'];
@@ -142,3 +147,137 @@ class Adviso_Switch_Control extends WP_Customize_Control{
 }
 
 endif;
+
+
+
+
+/**
+ *
+ * 	Extending the WP_Customize_Panel Class for nested Panels and Sections
+ *
+ * 	https://gist.github.com/OriginalEXE/9a6183e09f4cae2f30b006232bb154af
+ *
+**/
+
+if ( class_exists( 'WP_Customize_Panel' ) ) {
+
+  class Adviso_WP_Customize_Panel extends WP_Customize_Panel {
+
+    public $panel;
+
+    public $type = 'adviso_panel';
+
+    public function json() {
+
+      $array = wp_array_slice_assoc( (array) $this, array( 'id', 'description', 'priority', 'type', 'panel', ) );
+      $array['title'] = html_entity_decode( $this->title, ENT_QUOTES, get_bloginfo( 'charset' ) );
+      $array['content'] = $this->get_content();
+      $array['active'] = $this->active();
+      $array['instanceNumber'] = $this->instance_number;
+
+      return $array;
+
+    }
+
+  }
+
+}
+
+
+/**
+ *
+ * 	Extending the WP_Customize_Section Class for nested Panels and Sections
+ *
+**/
+
+if ( class_exists( 'WP_Customize_Section' ) ) {
+
+  class Adviso_WP_Customize_Section extends WP_Customize_Section {
+
+
+    public $section;
+    
+
+    public $type = 'adviso_section';
+    
+
+    public function json() {
+
+      $array = wp_array_slice_assoc( (array) $this, array( 'id', 'description', 'priority', 'panel', 'type', 'description_hidden', 'section', ) );
+      $array['title'] = html_entity_decode( $this->title, ENT_QUOTES, get_bloginfo( 'charset' ) );
+      $array['content'] = $this->get_content();
+      $array['active'] = $this->active();
+      $array['instanceNumber'] = $this->instance_number;
+
+      if ( $this->panel ) {
+
+        $array['customizeAction'] = sprintf( 'Customizing &#9656; %s', esc_html( $this->manager->get_panel( $this->panel )->title ) );
+
+      } else {
+
+        $array['customizeAction'] = 'Customizing';
+
+      }
+
+      return $array;
+
+    }
+
+  }
+
+}
+
+
+
+
+
+/**
+	 * Sortable Repeater Custom Control
+	 *
+	 * @author Anthony Hortin <http://maddisondesigns.com>
+	 * @license http://www.gnu.org/licenses/gpl-2.0.html
+	 * @link https://github.com/maddisondesigns
+	 */
+	if (class_exists( 'WP_Customize_Control' ) ) {
+		class Adviso_Sorter_Custom_Control extends WP_Customize_Control {
+			/**
+			 * The type of control being rendered
+			 */
+			public $type = 'sorter';
+		
+			/**
+			 * Render the control in the customizer
+			 */
+			public function render_content() {
+			?>
+		      <div class="drag_and_drop_control">
+					<?php if( !empty( $this->label ) ) { ?>
+						<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+					<?php } ?>
+					<?php if( !empty( $this->description ) ) { ?>
+						<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+					<?php } ?>
+					<input type="hidden" id="<?php echo esc_attr( $this->id ); ?>" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $this->value() ); ?>" class="customize-control-drag-and-drop" <?php $this->link(); ?> />
+					<ul class="sortable">
+						<li class="repeater" data-sorter="feat_posts">
+							<div class="repeater-input">Featured Posts</div>
+						</li>
+						<li class="repeater" data-sorter="feat_posts_car">
+							<div class="repeater-input">Featured Posts - Carousel</div>
+						</li>
+						<li class="repeater" data-sorter="feat_cat">
+							<div class="repeater-input">Featured Categories</div>
+						</li>
+						<li class="repeater" data-sorter="feat_prod">
+							<div class="repeater-input">Featured Products</div>
+						</li>
+						<li class="repeater" data-sorter="feat_prod_car">
+							<div class="repeater-input">Featured Products - Carousel</div>
+						</li>
+					</ul>
+					<button type="button" class="sorter_reset button">Reset</div>
+				</div>
+			<?php
+			}
+		}
+	}

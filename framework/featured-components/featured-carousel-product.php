@@ -7,10 +7,10 @@
             <?php echo esc_html( get_theme_mod('adviso_product_eta_title' ) ) ?>
         </div>
     <?php endif; ?>
-    <div id="featured-offers" class="featured-section-area">
+    <div id="featured-offers-product" class="featured-section-area">
         <div class="delta-container container">
 
-            <div class="owl-carousel owl-theme">
+            <div id="owl-product" class="owl-carousel owl-theme">
                 <?php
                 $count = 1;
                 $args = array(
@@ -27,21 +27,26 @@
                 $loop = new WP_Query( $args );
                 while ( $loop->have_posts() ) :
                     $loop->the_post();
-
+                    global $product;
+                    
                     ?>
 
                     <div class="fg-item-container">
-                        <div class="fg-item">
+                        <div class="fg-item mdl-shadow--2dp">
                             <a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>">
                                 <div class="featured-thumb">
                                     <?php if(has_post_thumbnail()):
-                                        the_post_thumbnail('fulls');
-                                    the_title();
+                                        the_post_thumbnail('adviso-sq-thumb');
                                     else: ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder2.jpg" />
                                     <?php endif; ?>
                                 </div>
-
+								<div class="out-thumb mdl-card__supporting-text">
+                                    <div class="product-title">
+	                                    <?php the_title(); ?>
+	                                </div>
+                                    <span class="price"><?php echo $product->get_price_html(); ?></span>
+                                </div>
                             </a>
                         </div>
                     </div>

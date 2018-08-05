@@ -24,20 +24,18 @@
                     $loop->the_post();
                     ?>
                     <div class="fg-item-container">
-                        <div class="fg-item">
+                        <div class="fg-item mdl-card mdl-shadow--2dp">
                             <a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>">
                                 <div class="featured-thumb">
-                                    <div class="layer"></div>
                                     <?php if(has_post_thumbnail()):
                                         the_post_thumbnail('offer-thumb');
                                     else: ?>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder2.jpg" />
                                     <?php endif; ?>
-                                    <div class="out-thumb">
-                                        <?php the_title(); ?>
-                                    </div>
                                 </div>
-
+								<div class="out-thumb mdl-card__supporting-text">
+                                    <?php the_title(); ?>
+                                </div>
                             </a>
                         </div>
                     </div>

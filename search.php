@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-area col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<main id="main" class="site-main">
 
 		<?php
@@ -18,7 +18,7 @@ get_header(); ?>
 			<header class="page-header">
 				<h1 class="page-title"><?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'adviso' ), '<span>' . get_search_query() . '</span>' );
+					printf( esc_html__( 'Results for: %s', 'adviso' ), '<span>' . get_search_query() . '</span>' );
 				?></h1>
 			</header><!-- .page-header -->
 
@@ -31,11 +31,11 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'framework/layouts/content', 'grid' );
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_pagination();
 
 		else :
 
