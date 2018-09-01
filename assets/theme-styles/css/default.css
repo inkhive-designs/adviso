@@ -1174,10 +1174,11 @@ body.home #site-navigation ul.menu > li:hover a {
   top: -10px;
 }
 .grid_2_column {
-  padding: 0;
+  padding: 0 2%;
   width: 50%;
   margin-bottom: 4em;
   border-bottom: none;
+  float: left;
 }
 .grid_2_column .featured-thumb {
   overflow: hidden;
@@ -1194,7 +1195,6 @@ body.home #site-navigation ul.menu > li:hover a {
   padding-left: 0;
 }
 .grid_2_column .out-thumb header a {
-  font-size: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1220,20 +1220,6 @@ body.home #site-navigation ul.menu > li:hover a {
   width: 100%;
   left: 0;
   bottom: -10px;
-}
-@media screen and (max-width: 768px) {
-  .grid_2_column {
-    padding-right: 0px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .grid_2_column:nth-of-type(even) {
-    padding-left: 10px;
-  }
-  .grid_2_column:nth-of-type(odd) {
-    padding-right: 10px;
-    clear: left;
-  }
 }
 .grid_3_column:nth-child(3n) {
   padding-left: 10px;

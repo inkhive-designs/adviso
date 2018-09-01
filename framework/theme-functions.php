@@ -77,7 +77,7 @@ function adviso_get_blog_layout(){
     if (get_theme_mod('adviso_blog_layout') ) :
         get_template_part( $ldir , get_theme_mod('adviso_blog_layout') );
     else :
-        get_template_part( $ldir ,'grid');
+        get_template_part( $ldir ,'adviso');
     endif;
 }
 add_action('adviso_blog_layout', 'adviso_get_blog_layout');

@@ -37,13 +37,13 @@ function adviso_customize_register_layouts( $wp_customize ) {
     $wp_customize->add_setting(
         'adviso_blog_layout',
         array(
-            'default' => 'grid',
+            'default' => 'adviso',
             'sanitize_callback' => 'adviso_sanitize_blog_layout',
         )
     );
 
     function adviso_sanitize_blog_layout( $input ) {
-        if ( in_array($input, array('grid','grid_2_column','adviso') ) )
+        if ( in_array($input, array('blog','grid_2_column','adviso') ) )
             return $input;
         else
             return '';
@@ -57,7 +57,7 @@ function adviso_customize_register_layouts( $wp_customize ) {
             'section'  => 'adviso_design_options',
             'type' => 'select',
             'choices' => array(
-                'grid' => __('Standard Blog Layout','adviso'),
+                'blog' => __('Standard Blog Layout','adviso'),
                 'adviso' => __('Adviso Theme Layout','adviso'),
                 'grid_2_column' => __('Grid - 2 Column','adviso'),
             )
