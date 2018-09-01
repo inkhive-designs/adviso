@@ -129,7 +129,7 @@ a:hover {
 #social-wrapper {
   display: flex;
   display: -webkit-flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
   margin-top: auto;
 }

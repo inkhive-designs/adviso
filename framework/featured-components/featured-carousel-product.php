@@ -1,7 +1,7 @@
 <?php
 //Carousel
 ?>
-<?php if ( get_theme_mod('adviso_product_eta_enable') == 'enable' && is_front_page() ) : ?>
+<?php if ( class_exists('woocommerce') && get_theme_mod('adviso_product_eta_enable') == 'enable' && is_front_page() ) : ?>
     <?php if (get_theme_mod('adviso_product_eta_title')) : ?>
         <div class="section-title title-font">
             <?php echo esc_html( get_theme_mod('adviso_product_eta_title' ) ) ?>

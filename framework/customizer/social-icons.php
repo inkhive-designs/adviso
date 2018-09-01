@@ -28,7 +28,8 @@ function adviso_customize_register_social( $wp_customize ) {
 		$wp_customize->add_setting(
 			'adviso_social_'.$x, array(
 				'sanitize_callback' => 'adviso_sanitize_social',
-				'default' => 'none'
+				'default' => 'none',
+				'transport'	=> 'postMessage'
 			));
 
 		$wp_customize->add_control( 'adviso_social_'.$x, array(

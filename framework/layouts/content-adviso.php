@@ -17,7 +17,7 @@
         </div>
 
         <div class="out-thumb">
-            <h3 class="title-font"><a class="post-title" href="<?php the_permalink() ?>"><?php echo the_title(); ?></a></h3>
+            <h3><a class="post-title" href="<?php the_permalink() ?>"><?php echo the_title(); ?></a></h3>
             <p class="entry-excerpt"><?php echo substr(get_the_excerpt(),0,80).(get_the_excerpt() ? "..." : "" ); ?></p>
 
             <div class="postedon">

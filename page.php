@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area col-md-8">
+	<div id="primary" class="content-area <?php do_action('adviso_primary-width'); ?>">
 		<main id="main" class="site-main">
 
 			<?php

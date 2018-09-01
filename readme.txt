@@ -1,15 +1,15 @@
 === adviso ===
 
 Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-background, two-columns, one-column, custom-colors, flexible-header, right-sidebar, grid-layout, custom-menu, sticky-post, theme-options, threaded-comments, translation-ready, featured-images, full-width-template, custom-header, footer-widgets
 
 Requires at least: 4.0
-Tested up to: 4.8
-Stable tag: 1.0.0
+Tested up to: 4.9.7
+Stable tag: 0.91
 License: GNU General Public License v3 or later
 License URI: LICENSE
 
-A starter theme called adviso.
+A starter theme called Adviso.
 
 == Description ==
 
@@ -29,8 +29,9 @@ adviso includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
-* Initial release
+- Version 0.9
+
+  * Initial release
 
 == Credits ==
 

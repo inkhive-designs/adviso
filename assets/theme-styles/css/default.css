@@ -92,14 +92,6 @@ a:hover {
 #content {
   padding-top: 30px;
 }
-#content h1,
-#content h2,
-#content h3,
-#content h4,
-#content h5,
-#content h6 {
-  font-family: "Arvo", sans-serif;
-}
 #content p,
 #content ul,
 #content ol,
@@ -129,7 +121,7 @@ a:hover {
 #social-wrapper {
   display: flex;
   display: -webkit-flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
   margin-top: auto;
 }
@@ -227,6 +219,14 @@ body.home #social-wrapper {
   background: #ffffff;
   clear: both;
   height: 450px;
+}
+#masthead .header-text {
+  text-align: center;
+  font-size: 40px;
+  color: black;
+  font-weight: 300;
+  margin: auto;
+  line-height: 1.5em;
 }
 #masthead #top-bar {
   padding: 10px 0;
@@ -876,7 +876,6 @@ body.home #site-navigation ul.menu > li:hover a {
   text-shadow: none;
   padding: 10px;
   background: #ff5722;
-  font-family: "Arvo", sans-serif;
   font-weight: 400;
   color: white;
   margin-bottom: 60px;
@@ -1114,6 +1113,7 @@ body.home #site-navigation ul.menu > li:hover a {
   padding-left: 0;
   padding-bottom: 17px;
   border-bottom: solid 1px #eee;
+  overflow: auto;
 }
 @media screen and (max-width: 768px) {
   .grid {
@@ -1345,7 +1345,6 @@ body.home #site-navigation ul.menu > li:hover a {
   margin: 0;
   border-bottom: 1px solid #f3f3f3;
   padding: 8px 0;
-  font-family: "Ubuntu", sans-serif;
 }
 .featposts .item .item-container .out-thumb h3 a {
   font-size: 17px;
@@ -1610,9 +1609,8 @@ body.home #site-navigation ul.menu > li:hover a {
   width: 55%;
   display: inline-block;
 }
-#featured-products .item-wrapper .item .thumb-info .product-title h6 {
+#featured-products .item-wrapper .item .thumb-info .product-title div {
   margin: 0px;
-  font-family: "Ubuntu", sans-serif;
   color: #888;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2542,7 +2540,6 @@ body.single-product div.product .product_meta {
   padding: 8px 0px;
   margin-top: 15px;
   line-height: 2em;
-  font-family: "Arvo", sans-serif;
 }
 body.single-product div.product .product_meta span.sku_wrapper,
 body.single-product div.product .product_meta span.posted_in {
@@ -2888,9 +2885,6 @@ body.single-product div.product form.cart .group_table td {
 .woocommerce ul.products li.product .product-thumb-container {
   position: relative;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-.woocommerce ul.products li.product .product-desc {
-  overflow: auto;
 }
 .woocommerce ul.products li.product .product-desc .product-title-wrapper {
   display: flex;

@@ -30,6 +30,10 @@ jQuery(document).ready( function() {
 				.attr('data-sorter',defaultValuesArray[i])
 				.html('<div class="repeater-input">' + defaultTextArray[i] + '</div>');
 		}
+		
+		if ( sorter.woocommerce == '' ) {
+			jQuery('.sortable').find('[data-sorter="feat_prod"],[data-sorter="feat_prod_car"]').remove();
+		}
 	});
 
 	// Make our Repeater fields sortable
@@ -56,9 +60,11 @@ jQuery(document).ready( function() {
 	// Get the values from the repeater input fields and add to our hidden field
 
 	function dvtGetAllInputs(jQueryelement) {
+		
 		var inputValues = jQueryelement.find('.repeater').map(function() {
 			return jQuery(this).attr('data-sorter');
 		}).toArray();
+		
 		// Add all the values from our repeater fields to the hidden field (which is the one that actually gets saved)
 		jQueryelement.find('.customize-control-drag-and-drop').val(inputValues);
 		// Important! Make sure to trigger change event so Customizer knows it has to save the field
@@ -112,5 +118,47 @@ jQuery(document).ready( function() {
             
         }
     });
+    
+    // The Font Size Custom Control
+    
+    var activeButton	=	function() {
+	    jQuery('input[type=radio][data-control=size]:checked + span').addClass('button-primary');
+	}
+	
+	activeButton();
+    
+    jQuery('.font-size-buttons').on('click', 'span.size', function() {
+	    jQuery(this).parents('.font-size-buttons').find('span').removeClass('button-primary');
+	    jQuery(this).addClass('button-primary');
+    });
+    
+    jQuery(document).ready(function() {
+		jQuery('body').find('#accordion-section-themes').after('<div class="cta-pro"><h4>Check out Adviso Plus</h4><a href="https://www.inkhive.com/product/adviso-plus" class="cta-pro-button button"><span class="dashicons dashicons-plus"></span>Adviso Plus</a></div>');
+	});
+	
+	// Contact Info Section
 
 });
+
+(function( $ ) {
+	wp.customize.bind('ready', function() {
+		var api	=	this;
+		api( 'adviso_contact_info_enable', function( setting ) {
+			var toggleContacts	=	function() {
+					if ( 'disable'	=== setting.get() ) {
+						api.control( 'adviso_message' ).container.fadeOut( 100 );
+						api.control( 'adviso_mail_id' ).container.fadeOut( 100 );
+						api.control( 'adviso_phone' ).container.fadeOut( 100 );
+					} else {
+						api.control( 'adviso_message' ).container.fadeIn( 100 );
+						api.control( 'adviso_mail_id' ).container.fadeIn( 100 );
+						api.control( 'adviso_phone' ).container.fadeIn( 100 );
+					}
+				} 
+			toggleContacts();
+			
+			setting.bind( toggleContacts );
+		});
+		
+	});
+})( jQuery );

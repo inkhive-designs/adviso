@@ -43,48 +43,19 @@ function adviso_customize_register_skins( $wp_customize ) {
 			'priority'	=> 20,
 		) ) 
 	);
-	
-	
-//	$wp_customize->add_setting(
-//		'adviso_skin',
-//		array(
-//			'default'=> 'default',
-//			'sanitize_callback' => 'adviso_sanitize_skin' 
-//			)
-//	);
-//	
-//	$skins = array( 'default' => __('Default(Adviso)','adviso'),
-//					'blue-pink' => __('Pinkyblue','adviso'),
-//                    'yellow-black' => __('Yellowishblack', 'adviso'),
-//					);
-//	
-//	$wp_customize->add_control(
-//		'adviso_skin',array(
-//				'settings' => 'adviso_skin',
-//				'section'  => 'colors',
-//				'label' => __('Choose Skin','adviso'),
-//				'description' => __('Free Version of Adviso Supports 3 Different Skin Colors.','adviso'),
-//				'type' => 'select',
-//				'choices' => $skins,
-//			)
-//	);
-//	
-//	function adviso_sanitize_skin( $input ) {
-//		if ( in_array($input, array('default', 'blue-pink', 'yellow-black') ) )
-//			return $input;
-//		else
-//			return '';
-//	}
-
-    //Select the Default Theme Skin
-    $wp_customize->add_section(
-        'adviso_skin_options',
-        array(
-            'title'     => __('Theme Skin & Colors','adviso'),
-            'priority'  => 39,
-            'panel'     => 'adviso_design_panel'
-        )
-    );
+    
+    $wp_customize->add_control(
+		new Adviso_Plus_Upsell_Control(
+		$wp_customize,
+		'adviso_plus_skin',
+			array(
+				'settings'	=> array(),
+				'section'	=> 'colors',
+				'priority'	=> 25,
+				'description'		=> __('More Options in Adviso Plus', 'adviso')
+			)
+		)
+	);
 
     function adviso_sanitize_skin( $input ) {
         if ( in_array($input, array('default','blue-pink','yellow-black','off-blue-gray','brownish') ) )
@@ -92,47 +63,6 @@ function adviso_customize_register_skins( $wp_customize ) {
         else
             return '';
     }
-
-    //Skins
-/*
-    $wp_customize->add_setting(
-        'adviso_skins',
-        array(
-            'default'	=> 'default',
-            'sanitize_callback' => 'adviso_sanitize_skin',
-            'transport'	=> 'refresh'
-        )
-    );
-
-    if(!function_exists('adviso_skin_array')){
-        function adviso_skin_array(){
-            return array(
-                '#ff6600' => 'default',
-                '#2590df' => 'blue-pink',
-                '#000000' => 'yellow-black',
-                '#04def7' => 'off-blue-gray',
-                '#e2ccb2' => 'brownish',
-            );
-        }
-    }
-
-    $adviso_skin_array = adviso_skin_array();
-
-
-    $wp_customize->add_control(
-        new Adviso_Skin_Chooser(
-            $wp_customize,
-            'adviso_skins',
-            array(
-                'settings'		=> 'adviso_skins',
-                'section'		=> 'colors',
-                'label'			=> __( 'Select Skins', 'adviso' ),
-                'type'			=> 'skins',
-                'choices'		=> $adviso_skin_array,
-            )
-        )
-    );
-*/
 }
 add_action('customize_register', 'adviso_customize_register_skins');
  

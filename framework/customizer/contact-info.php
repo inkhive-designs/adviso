@@ -3,7 +3,8 @@ function adviso_customize_register_header_mail( $wp_customize ) {
 
     $wp_customize->add_section('adviso_contact_info', array(
         'title' => __('Contact Info','adviso'),
-        'panel' => 'adviso_header_panel'
+        'panel' => 'adviso_header_panel',
+        'priority'	=> 40
     ));
 
     $wp_customize->add_setting('adviso_contact_info_enable', array(

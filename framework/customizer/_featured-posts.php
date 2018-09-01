@@ -38,7 +38,7 @@ function adviso_customize_register_fp( $wp_customize ) {
 
     $wp_customize->add_setting(
         'adviso_featposts_heading',
-        array( 'sanitize_calback' => 'adviso_sanitize_text' )
+        array( 'sanitize_callback' => 'adviso_sanitize_text' )
     );
 
     $wp_customize->add_control(

@@ -187,11 +187,12 @@ function adviso_sorter_val() {
 	
 	$adviso_val	=	array(
 		
-		'feat_posts'	=>  get_theme_mod( 'adviso_featposts_enable' ),
-		'feat_posts_car'=> get_theme_mod( 'adviso_eta_enable' ),
-		'feat_cat'		=> get_theme_mod( 'adviso_featposts_cat_enable' ),
-		'feat_prod'		=> get_theme_mod( 'adviso_product_enable' ),
-		'feat_prod_car'	=> get_theme_mod( 'adviso_product_eta_enable' ),
+		'woocommerce'	=> 	class_exists('woocommerce'),
+		'feat_posts'	=>	get_theme_mod( 'adviso_featposts_enable' ),
+		'feat_posts_car'=> 	get_theme_mod( 'adviso_eta_enable' ),
+		'feat_cat'		=> 	get_theme_mod( 'adviso_featposts_cat_enable' ),
+		'feat_prod'		=> 	get_theme_mod( 'adviso_product_enable' ),
+		'feat_prod_car'	=> 	get_theme_mod( 'adviso_product_eta_enable' ),
 		
 	);
 	wp_localize_script( 'adviso-customize-control', 'sorter', $adviso_val );
@@ -228,6 +229,24 @@ function adviso_sorter() {
 		show( $i );
 	}
 }
+
+function adviso_load_fonts() {
+	
+	$fonts	=	[];
+	
+	array_push( $fonts, get_theme_mod( 'adviso_title_font1', 'Arvo' ) );
+	array_push( $fonts, get_theme_mod( 'adviso_body_font1', 'Ubuntu' ) );
+	array_push( $fonts, get_theme_mod( 'adviso_site_title_font', 'Arvo' ) );
+	array_push( $fonts, get_theme_mod( 'adviso_blog_title_font1', 'Arvo' ) );
+	
+	$fonts	=	array_unique( $fonts );
+	
+	foreach ($fonts as $font) {
+		wp_enqueue_style( 'adviso-' . str_replace(" ", "-", strtolower( $font ) ) . '-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", $font ) . ':100,300,400,700' );
+	}
+}
+
+add_action( 'wp_enqueue_scripts', 'adviso_load_fonts', 10 );
 
 
 /**

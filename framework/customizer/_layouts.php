@@ -2,13 +2,28 @@
 function adviso_customize_register_layouts( $wp_customize ) {
     $wp_customize->get_section('background_image')->panel = 'adviso_design_panel';
     // Layout and Design
+/*
     $wp_customize->add_panel( 'adviso_design_panel', array(
-        'priority'       => 40,
+        'priority'       => 20,
         'capability'     => 'edit_theme_options',
         'theme_supports' => '',
         'title'          => __('Design & Layout','adviso'),
     ) );
-
+*/
+    
+    $wp_customize->add_panel(
+		new Adviso_WP_Customize_Panel(
+		  $wp_customize,
+		  'adviso_design_panel',
+		  array(
+			  'title'	=> __( 'Design & Layout', 'adviso' ),
+			  'priority'	=> 20,
+			  'capability'     => 'edit_theme_options',
+			  'theme_supports' => '',
+		  )
+		)
+	);
+    
     $wp_customize->add_section(
         'adviso_design_options',
         array(
@@ -48,6 +63,19 @@ function adviso_customize_register_layouts( $wp_customize ) {
             )
         )
     );
+    
+    $wp_customize->add_control(
+		new Adviso_Plus_Upsell_Control(
+		$wp_customize,
+		'adviso_plus_blog_layout',
+			array(
+				'settings'	=> array(),
+				'section'	=> 'adviso_design_options',
+				'priority'	=> 25,
+				'description'		=> __('More Options in Adviso Plus', 'adviso')
+			)
+		)
+	);
 
     //Sidebar Layout
     $wp_customize->add_section(
@@ -137,7 +165,9 @@ function adviso_customize_register_layouts( $wp_customize ) {
         'adviso_sidebar_width',
         array(
             'default' => 4,
-            'sanitize_callback' => 'adviso_sanitize_positive_number' )
+            'sanitize_callback' => 'adviso_sanitize_positive_number',
+            'transport'	=> 'postMessage'
+        )
     );
 
     $wp_customize->add_control(
@@ -157,6 +187,19 @@ function adviso_customize_register_layouts( $wp_customize ) {
             ),
         )
     );
+    
+    $wp_customize->add_control(
+		new Adviso_Plus_Upsell_Control(
+		$wp_customize,
+		'adviso_plus_sidebar_layout',
+			array(
+				'settings'	=> array(),
+				'section'	=> 'adviso_sidebar_options',
+				'priority'	=> 25,
+				'description'		=> __('More Options in Adviso Plus', 'adviso')
+			)
+		)
+	);
 
     /* Active Callback Function */
     function adviso_show_sidebar_options($control) {

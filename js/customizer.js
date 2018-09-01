@@ -7,6 +7,24 @@
 
 (function($) {
 	
+	wp.customize( 'blogname', function( value ) {
+		value.bind( function( to ) {
+			$( '.site-title a' ).text( to );
+		} );
+	} );
+	
+	wp.customize( 'blogdescription', function( value ) {
+		value.bind( function( to ) {
+			$( '.site-description' ).text( to );
+		} );
+	} );
+	
+	wp.customize( 'adviso_header_text', function( value ) {
+		value.bind( function( to ) {
+			$( '#header-text' ).text( to );
+		} );
+	} );
+	
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
@@ -43,4 +61,65 @@
 		    jQuery('body.home ul.menu > li:not(.current-menu-item):not(.current_page_item):not(.current_page_ancestor) > a, body.home #adviso-search #search-icon, body.home #contact-info, #top-cart, #top-cart a').css('color', to );
 	    });
     });
+    
+    wp.customize( 'adviso_social_1', function( value ) {
+		value.bind( function( to ) {
+			var ClassNew	=	'fa fa-fw fa-' + to;
+			jQuery('#social-icons' ).find( 'i:eq(0)' ).attr( 'class', ClassNew );
+		});
+	});
+	
+	 wp.customize( 'adviso_social_2', function( value ) {
+		value.bind( function( to ) {
+			var ClassNew	=	'fa fa-fw fa-' + to;
+			jQuery('#social-icons' ).find( 'i:eq(1)' ).attr( 'class', ClassNew );
+		});
+	});
+	
+	 wp.customize( 'adviso_social_3', function( value ) {
+		value.bind( function( to ) {
+			var ClassNew	=	'fa fa-fw fa-' + to;
+			jQuery('#social-icons' ).find( 'i:eq(2)' ).attr( 'class', ClassNew );
+		});
+	});
+	
+	 wp.customize( 'adviso_social_4', function( value ) {
+		value.bind( function( to ) {
+			var ClassNew	=	'fa fa-fw fa-' + to;
+			jQuery('#social-icons' ).find( 'i:eq(3)' ).attr( 'class', ClassNew );
+		});
+	});
+	
+	 wp.customize( 'adviso_social_5', function( value ) {
+		value.bind( function( to ) {
+			var ClassNew	=	'fa fa-fw fa-' + to;
+			jQuery('#social-icons' ).find( 'i:eq(4)' ).attr( 'class', ClassNew );
+		});
+	});
+	
+	 wp.customize( 'adviso_social_6', function( value ) {
+		value.bind( function( to ) {
+			var ClassNew	=	'fa fa-fw fa-' + to;
+			jQuery('#social-icons' ).find( 'i:eq(5)' ).attr( 'class', ClassNew );
+		});
+	});
+	
+	 wp.customize( 'adviso_social_7', function( value ) {
+		value.bind( function( to ) {
+			var ClassNew	=	'fa fa-fw fa-' + to;
+			jQuery('#social-icons' ).find( 'i:eq(6)' ).attr( 'class', ClassNew );
+		});
+	});
+	
+	/*---- Sidebar Width ----*/
+	
+	wp.customize( 'adviso_sidebar_width', function( setting ) {
+		setting.bind( function( to )  {
+			var numWidth	=	(to / 12) * 100;
+			jQuery('#secondary').css('width', numWidth + '%' );
+			jQuery('#primary').css('width', 100 - numWidth + '%');
+		});
+	});
+	
+	
 })(jQuery);

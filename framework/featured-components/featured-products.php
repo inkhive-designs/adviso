@@ -1,4 +1,4 @@
-<?php if ( get_theme_mod('adviso_product_enable') == 'enable' && is_front_page() ): ?>
+<?php if ( class_exists('woocommerce') && get_theme_mod('adviso_product_enable') == 'enable' && is_front_page() ): ?>
     
 	<div id="featured-products" class="container">
 		<?php if (get_theme_mod('adviso_product_title') !='') : ?>
@@ -40,7 +40,7 @@
 	                    </div>
 	                   <div class="thumb-info">
 		                   <div class="product-title">
-		                        <h6><?php the_title(); ?></h6>
+		                        <div><?php the_title(); ?></div>
 		                    </div>
 		                    <?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
 	                    </div>
