@@ -47,14 +47,14 @@
             </div>
         <?php endif; ?>
     </div>
-    
-    <?php if ( ( get_theme_mod( 'adviso_header_text' ) != '' ) && is_front_page() ) { ?>
+   
 	    <div class="header-text title-font container">
+		     <?php if ( ( get_theme_mod( 'adviso_header_text' ) != '' ) && is_front_page() ) { ?>
 		    <?php
 			    echo esc_html( get_theme_mod('adviso_header_text') );
 		    ?>
+			<?php } ?>
 	    </div>
-    <?php } ?>
     
     <?php if ( get_theme_mod('adviso_header_cta_enable') && is_front_page() ) { ?>
 	    <div class="header-cta">

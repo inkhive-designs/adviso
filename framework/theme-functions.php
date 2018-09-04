@@ -224,7 +224,7 @@ function adviso_sorter() {
 		}		
 	}
 	
-	$order	=	explode( ',', get_theme_mod('adviso_sorter_control') );
+	$order	=	explode( ',', get_theme_mod('adviso_sorter_control', 'feat_posts,feat_posts_car,feat_cat,feat_prod,feat_prod_car') );
 	foreach( $order as $i ) {
 		show( $i );
 	}

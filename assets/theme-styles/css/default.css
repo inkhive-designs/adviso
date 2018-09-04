@@ -125,7 +125,7 @@ a:hover {
   align-items: center;
   margin-top: auto;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   #social-wrapper {
     flex-direction: column;
   }
@@ -173,7 +173,7 @@ body.home #social-wrapper {
   background: #5deb68;
   color: white;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   #social-wrapper #social-icons a {
     margin: 0 2px;
     padding: 8px 10px;
@@ -186,9 +186,9 @@ body.home #social-wrapper {
   font-weight: 400;
   letter-spacing: .08em;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   #social-wrapper #contact-info {
-    margin-bottom: 15px;
+    margin: 15px auto;
   }
 }
 #social-wrapper #contact-info .fa {
@@ -235,7 +235,7 @@ body.home #social-wrapper {
 }
 #masthead .header-cta {
   text-align: center;
-  margin-top: 2%;
+  margin-top: 4%;
 }
 #masthead .header-cta a {
   background: #ff4408;
@@ -3073,6 +3073,7 @@ td.product-quantity {
   text-transform: uppercase;
   letter-spacing: .04em;
   padding: 8px 16px;
+  height: auto;
   font-weight: 700;
   line-height: normal;
 }

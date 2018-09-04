@@ -32,7 +32,7 @@ jQuery(document).ready( function() {
 		}
 		
 		if ( sorter.woocommerce == '' ) {
-			jQuery('.sortable').find('[data-sorter="feat_prod"],[data-sorter="feat_prod_car"]').remove();
+			jQuery('.sortable').find('[data-sorter="feat_prod"],[data-sorter="feat_prod_car"]').addClass('disabled');
 		}
 	});
 
