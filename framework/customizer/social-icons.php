@@ -14,7 +14,7 @@ function adviso_customize_register_social( $wp_customize ) {
 					'google-plus' => __('Google Plus','adviso'),
 					'instagram' => __('Instagram','adviso'),
 					'rss' => __('RSS Feeds','adviso'),
-					'vine' => __('Vine','adviso'),
+					'pinterest-p' => __('Pinterest','adviso'),
 					'vimeo-square' => __('Vimeo','adviso'),
 					'youtube' => __('Youtube','adviso'),
 					'flickr' => __('Flickr','adviso'),
@@ -63,7 +63,7 @@ function adviso_customize_register_social( $wp_customize ) {
 					'google-plus',
 					'instagram',
 					'rss',
-					'vine',
+					'pinterest-p',
 					'vimeo-square',
 					'youtube',
 					'flickr'

@@ -31,7 +31,7 @@ function adviso_custom_css_mods() {
 				";
 				
 		// Blog Page
-	$custom_css .= "body.blog .section-title, body.blog h1, body.blog h2, body.blog h3:not(.site-title):not(.widget-title) {
+	$custom_css .= "body.blog .section-title, body.blog h1:not(.site-title), body.blog h2, body.blog h3:not(.widget-title) {
 				font-family: '" . esc_html( get_theme_mod( 'adviso_blog_title_font1', 'Arvo' ) ) . "';
 				font-size: " . esc_html( get_theme_mod( 'adviso_blog_title_font_size', '24' ) ) . "px;
 				font-weight: " . esc_html( get_theme_mod( 'adviso_blog_title_font_weight', '400' ) ) . "; }";
