@@ -53,6 +53,10 @@ This theme is 100% GPL. And any external resources used and bundled with the the
 8. Underscores Starter Theme
 	- GPL
 	- https://underscores.me/
+	
+9. Maddison Designs Custom Controls
+	- GPL v2 or later
+	- https://github.com/maddisondesigns/customizer-custom-controls
      
 	
 All Other Resources, apart from the ones mentioned above have been created by me fall under GPL v3 license of the theme.	

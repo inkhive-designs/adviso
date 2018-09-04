@@ -410,7 +410,7 @@ Skins
 .cta-pro a {
   display: flex !important;
   display: inline-flex;
-  width: 50%;
+  width: 64%;
   margin: auto !important;
   justify-content: center;
   align-items: center;
@@ -419,4 +419,18 @@ Skins
 .cta-pro a span {
   padding-top: 2px;
   padding-right: 2px;
+}
+/*-------------------
+ Image Radio Buttons
+--------------------*/
+.image_radio_button_control .radio-button-label > input {
+  display: none;
+}
+.image_radio_button_control .radio-button-label > input:checked + img {
+  border: 3px solid #2885bb;
+}
+.image_radio_button_control .radio-button-label > img {
+  width: 45%;
+  vertical-align: middle;
+  margin-right: 3px;
 }

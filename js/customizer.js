@@ -21,7 +21,7 @@
 	
 	wp.customize( 'adviso_header_text', function( value ) {
 		value.bind( function( to ) {
-			$( '#header-text' ).text( to );
+			$( '.header-text' ).text( to );
 		} );
 	} );
 	
@@ -113,13 +113,23 @@
 	
 	/*---- Sidebar Width ----*/
 	
-	wp.customize( 'adviso_sidebar_width', function( setting ) {
-		setting.bind( function( to )  {
+	wp.customize( 'adviso_sidebar_width', function( value ) {
+		value.bind( function( to )  {
 			var numWidth	=	(to / 12) * 100;
 			jQuery('#secondary').css('width', numWidth + '%' );
 			jQuery('#primary').css('width', 100 - numWidth + '%');
 		});
 	});
 	
+	/*---- Sidebar Align ----*/
 	
+	wp.customize( 'adviso_blog_sidebar_layout', function( value ) {
+		value.bind( function( to ) {
+			if ( to == 'sidebarleft') {
+				jQuery('body.blog #primary').css('float', 'right');
+			} else {
+				jQuery('body.blog #primary').css('float', 'left');
+			}
+		});
+	});
 })(jQuery);

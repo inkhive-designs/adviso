@@ -31,7 +31,7 @@ function adviso_scripts() {
     wp_enqueue_style( 'drawer-material', get_template_directory_uri() . '/assets/css/material.min.css' );
 
     //Main CSS
-    wp_enqueue_style( 'adviso-main-theme-style', get_template_directory_uri() . '/assets/theme-styles/css/'.get_theme_mod('adviso_skins', 'default').'.css', array(), null );
+    wp_enqueue_style( 'adviso-main-theme-style', get_template_directory_uri() . '/assets/theme-styles/css/'.get_theme_mod('adviso_skins', 'default').'.css', array() );
 
     wp_enqueue_script( 'adviso-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

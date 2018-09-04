@@ -41,6 +41,10 @@ function adviso_custom_css_mods() {
 				font-family: '" . esc_html( get_theme_mod( 'adviso_blog_body_font', 'Ubuntu' ) ) . "';
 				font-size: " . esc_html( get_theme_mod( 'adviso_blog_body_font_size', '16' ) ) . "px;
 				font-weight: " . esc_html( get_theme_mod( 'adviso_blog_body_font_weight', '400' ) ) . "; }";
+				
+	if ( get_theme_mod('adviso_blog_sidebar_layout', 'sidebarright') == 'sidebarleft' ) {
+		$custom_css .= "body.blog #primary {float: right;}";
+	}
 	  
 
     if( !display_header_text() ):

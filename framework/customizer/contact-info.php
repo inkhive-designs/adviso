@@ -8,6 +8,7 @@ function adviso_customize_register_header_mail( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('adviso_contact_info_enable', array(
+	    'default'			=> 'disable',
         'sanitize_callback' => 'adviso_sanitize_text',
     ));
 
@@ -18,7 +19,7 @@ function adviso_customize_register_header_mail( $wp_customize ) {
             array(
                 'settings'		=> 'adviso_contact_info_enable',
                 'section'		=> 'adviso_contact_info',
-                'label'    => __( 'Show Contact Info Options','adviso' ),
+                'label'    => __( 'Show Contact Info','adviso' ),
                 'enable_disable' 	=> array(
                     'enable' => __( 'Enabled', 'adviso' ),
                     'disable' => __( 'Disabled', 'adviso' )

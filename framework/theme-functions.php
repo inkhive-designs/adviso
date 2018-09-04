@@ -26,7 +26,7 @@ function adviso_load_sidebar() {
         $load_sidebar = false;
     elseif( get_theme_mod('adviso_disable_sidebar_home') == 'disable' && is_home() )	:
         $load_sidebar = false;
-    elseif( get_theme_mod('adviso_disable_sidebar_front') == 'disable' && e() ) :
+    elseif( get_theme_mod('adviso_disable_sidebar_front') == 'disable' && ( is_front_page() && !is_home() )  ) :
         $load_sidebar = false;
     endif;
 

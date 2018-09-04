@@ -56,6 +56,7 @@ function adviso_customize_register_layouts( $wp_customize ) {
             'settings' => 'adviso_blog_layout',
             'section'  => 'adviso_design_options',
             'type' => 'select',
+            'priority'	=> 5,
             'choices' => array(
                 'blog' => __('Standard Blog Layout','adviso'),
                 'adviso' => __('Adviso Theme Layout','adviso'),
@@ -63,6 +64,49 @@ function adviso_customize_register_layouts( $wp_customize ) {
             )
         )
     );
+    
+    $wp_customize->add_setting( 'adviso_blog_sidebar_layout',
+		array(
+			'default' => 'sidebarright',
+			'transport'	=> 'postMessage',
+			'sanitize_callback' => 'adviso_sidebar_sanitize'
+		)
+	);
+	
+	$wp_customize->add_control( 
+		new Adviso_Image_Radio_Custom_Control( 
+			$wp_customize,
+			'adviso_blog_sidebar_layout',
+			array(
+				'label' => __( 'Sidebar Layout', 'adviso' ),
+				'description'	=> __('Sidebar can be toggled from Sidebar Layout Section', 'adviso'),
+				'section' => 'adviso_design_options',
+				'settings' => 'adviso_blog_sidebar_layout',
+				'priority'	=> 10,
+				'choices' => array(
+					'sidebarleft' => array(
+						'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/layouts/left-sidebar.png',
+						'name' => __( 'Left Sidebar', 'adviso' )
+					),
+					'sidebarright' => array(
+						'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/layouts/right-sidebar.png',
+						'name' => __( 'Right Sidebar', 'adviso' )
+					)
+				)
+			)
+		)
+	);
+		
+	function adviso_sidebar_sanitize( $input, $setting ) {
+			//get the list of possible radio box or select options
+         $choices = $setting->manager->get_control( $setting->id )->choices;
+
+			if ( array_key_exists( $input, $choices ) ) {
+				return $input;
+			} else {
+				return $setting->default;
+			}
+		}
     
     $wp_customize->add_control(
 		new Adviso_Plus_Upsell_Control(

@@ -49,13 +49,17 @@
     </div>
     
     <?php if ( ( get_theme_mod( 'adviso_header_text' ) != '' ) && is_front_page() ) { ?>
-    
-	    <div class="header-text container">
+	    <div class="header-text title-font container">
 		    <?php
 			    echo esc_html( get_theme_mod('adviso_header_text') );
 		    ?>
 	    </div>
-	    
+    <?php } ?>
+    
+    <?php if ( get_theme_mod('adviso_header_cta_enable') && is_front_page() ) { ?>
+	    <div class="header-cta">
+		    <a href="<?php echo esc_url(get_theme_mod('adviso_header_cta_url', '')); ?>"><?php echo esc_html( get_theme_mod( 'adviso_header_cta', '' ) ); ?></a>
+	    </div>
     <?php } ?>
     
     <div id="social-wrapper" class="container">
