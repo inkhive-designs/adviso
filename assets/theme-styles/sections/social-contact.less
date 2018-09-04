@@ -54,6 +54,12 @@
 	#contact-info {
 		font-weight: 400;
 		letter-spacing: .08em;
+		& > * {
+			background: fade(@top-bar, 50%);
+			padding: 10px 14px;
+			color: white;
+			border-radius: 20px;
+		}
 		@media screen and (max-width: 768px) {
 			margin: 15px auto;
 		}
@@ -64,12 +70,6 @@
 		  font-size: 15px;
 		  display: inline-block;
 		  margin: 5px auto;
-		}
-		.mail, .phone {
-		  margin-left: 10px;
-		}
-		.message {
-		  margin-right: 10px;
 		}
 	}
 }

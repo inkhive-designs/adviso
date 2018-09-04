@@ -48,7 +48,7 @@ function adviso_scripts() {
     }
 
     //Custom Js
-    wp_enqueue_script( 'adviso-custom-js', get_template_directory_uri() . '/js/custom.js', array('adviso-external'));
+    wp_enqueue_script( 'adviso-custom-js', get_template_directory_uri() . '/js/custom.js', array('adviso-external'), '');
 
 }
 add_action( 'wp_enqueue_scripts', 'adviso_scripts', 10 );

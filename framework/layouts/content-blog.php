@@ -17,7 +17,7 @@
 			
 		<div class="out-thumb col-md-8 col-sm-8 col-xs-6">
 			<header class="entry-header mdl-card__title">
-                <h3 class="entry-title mdl-card__title-text"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+                <h3 class="entry-title title-font mdl-card__title-text"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
             </header><!-- .entry-header -->
             <div class="postedon"><?php adviso_posted_on(); ?></div>
             <p class="entry-excerpt"><?php echo substr(get_the_excerpt(),0,80).(get_the_excerpt() ? "..." : "" ); ?></p>

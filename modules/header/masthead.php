@@ -1,5 +1,8 @@
 <header id="masthead" class="site-header">
 	<div class="mobile-menu">
+		<button id="search-icon">
+        	<i class="fa fa-search"></i>
+        </button>
         <?php get_template_part('modules/navigation/menu','mobile'); ?>
     </div>
     <div id="top-bar">

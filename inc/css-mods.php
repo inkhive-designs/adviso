@@ -59,7 +59,7 @@ function adviso_custom_css_mods() {
         $custom_css .= "#masthead h2.site-description { color: ".esc_html( get_theme_mod('adviso_header_desccolor') ).";}";
     endif;
     
-    $custom_css	.=	"body.home #site-navigation ul.menu > li:not(.current-menu-item):not(.current_page_item):not(.current_page_ancestor) > a, body.home #adviso-search #search-icon,body.home #contact-info, body.home #top-cart, body.home #top-cart a { color: " . esc_html( get_theme_mod('adviso_top_bar_color', '#000000') ) . ";}";     
+    $custom_css	.=	"body.home #masthead #site-navigation ul.menu > li:not(.current-menu-item):not(.current_page_item):not(.current_page_ancestor) > a, body.home #masthead #adviso-search #search-icon,body.home #masthead #contact-info, body.home #masthead #top-cart, body.home #masthead #top-cart a { color: " . esc_html( get_theme_mod('adviso_top_bar_color', '#000000') ) . ";}";     
 
 	
     wp_add_inline_style( 'adviso-main-theme-style', wp_strip_all_tags($custom_css) );

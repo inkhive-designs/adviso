@@ -8,7 +8,7 @@
 
     <div class="featured-thumb mdl-shadow--2dp">
         <?php if (has_post_thumbnail()) : ?>
-            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail('adviso-pop-thumb', array(  'alt' => trim(strip_tags( $post->post_title )))); ?></a>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail('offer-thumb', array(  'alt' => trim(strip_tags( $post->post_title )))); ?></a>
         <?php else: ?>
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder2.jpg"; ?>" alt="<?php the_title(); ?>"></a>
         <?php endif; ?>
