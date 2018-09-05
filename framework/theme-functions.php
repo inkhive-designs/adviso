@@ -108,7 +108,8 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 
 		// start_lvl – wrapper for child comments list
 		function start_lvl( &$output, $depth = 0, $args = array() ) {
-			$GLOBALS['comment_depth'] = $depth + 2; ?>
+			
+			parent::start_lvl( $output, $depth, $args ); ?>
 			
 			<ol class="child-comments comments-list">
 
@@ -116,17 +117,18 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 	
 		// end_lvl – closing wrapper for child comments list
 		function end_lvl( &$output, $depth = 0, $args = array() ) {
-			$GLOBALS['comment_depth'] = $depth + 2; ?>
+			parent::end_lvl( $output, $depth, $args ); ?>
 
 			</ol>
 
 		<?php }
 
 		// start_el – HTML for comment template
-		function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-			$depth++;
-			$GLOBALS['comment_depth'] = $depth;
-			$GLOBALS['comment'] = $item;
+		function start_el( &$output = '', $item, $depth = 0, $args = array(), $id = 0 ) {
+			
+			parent::start_el( $output, $item, $depth, $args, $id );
+			$output	=	'';
+			
 			$parent_class = ( empty( $args['has_children'] ) ? '' : 'parent' ); 
 	
 			if ( 'article' == $args['style'] ) {
@@ -136,7 +138,7 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 				$tag = 'article';
 				$add_below = 'comment';
 			} ?>
-
+			
 			<li <?php comment_class(empty( $args['has_children'] ) ? '' :'parent') ?> id="comment-<?php comment_ID() ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
 				<div class="comment-container">
 					<figure class="gravatar"><?php echo get_avatar( $item, 65, '', 'Author’s gravatar' ); ?></figure>
@@ -161,7 +163,9 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 		<?php }
 
 		// end_el – closing HTML for comment template
-		function end_el(&$output, $item, $depth = 0, $args = array() ) { ?>
+		function end_el(&$output, $item, $depth = 0, $args = array() ) { 
+		
+			//parent::end_el( $output, $item, $depth, $args ); ?>
 
 			</li>
 
@@ -171,9 +175,9 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 		function __destruct() { ?>
 
 			</li>
+
 		
 		<?php }
-
 	}
 
 
