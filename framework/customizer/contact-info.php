@@ -28,18 +28,6 @@ function adviso_customize_register_header_mail( $wp_customize ) {
         )
     );
 
-    $wp_customize->add_setting( 'adviso_message' , array(
-        'sanitize_callback' => 'sanitize_text_field',
-    ) );
-
-    $wp_customize->add_control(
-        'adviso_message', array(
-        'label' => __('Write your Message','adviso'),
-        'section' => 'adviso_contact_info',
-        'settings' => 'adviso_message',
-        'type' => 'text',
-    ) );
-
     $wp_customize->add_setting( 'adviso_mail_id' , array(
         'sanitize_callback' => 'sanitize_text_field',
     ) );

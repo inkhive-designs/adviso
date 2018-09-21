@@ -18,7 +18,7 @@ jQuery(document).ready( function() {
 	        navClass: ['prev mdl-button mdl-js-button mdl-button--fab','next mdl-button mdl-js-button mdl-button--fab'],
 	        navText: ["<button class='mdl-button mdl-js-button mdl-button--fab mdl-button--primary'><i class='fa fa-chevron-left'></i></button>", "<button class='mdl-button mdl-js-button mdl-button--fab mdl-button--primary'><i class='fa fa-chevron-right'></i></button>"],
 	        responsive: {
-	            400 : {
+	            300 : {
 	                items : 1,
 	            },
 	            // breakpoint from 768 up
@@ -31,8 +31,8 @@ jQuery(document).ready( function() {
 	        }
 	    });
 	});
-	  
-	jQuery('#search-icon').click(function(){
+
+	jQuery('#adviso-search #search-icon').click( function() {
 		jQuery('#jumbosearch').fadeIn();
 	});
 	
