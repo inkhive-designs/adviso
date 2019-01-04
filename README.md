@@ -1,11 +1,11 @@
 # Adviso
 
-**Contributors:** (inkhive)  
+**Contributors:** inkhive
 **Requires at least:** WordPress 4.4  
-**Tested up to:** WordPress 4.9.7
-**Version:** 0.95
-**License:** GPL v3  
-**License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
+**Tested up to:** WordPress 5.0
+**Version:** 0.993
+**License:** GPL v3
+**License URI:** http://www.gnu.org/licenses/gpl-3.0.html
 **Tags:** custom-background, two-columns, one-column, custom-colors, flexible-header, right-sidebar, grid-layout, custom-menu, sticky-post, theme-options, threaded-comments, translation-ready, featured-images, full-width-template, custom-header, footer-widgets, e-commerce
 
 Creative and Beautiful WordPress Theme with a Large Header
@@ -49,14 +49,18 @@ This theme is 100% GPL. And any external resources used and bundled with the the
 7. BigSlide Menu
     - MIT License
     - https://github.com/ascott1/bigSlide.js/blob/master/LICENSE-MIT	
-    
-8. Underscores Starter Theme
-	- GPL
-	- https://underscores.me/
 	
-9. Maddison Designs Custom Controls
+8. Maddison Designs Custom Controls
 	- GPL v2 or later
 	- https://github.com/maddisondesigns/customizer-custom-controls
+	
+9. Screenshot Stock Image
+	- CCO License
+	- https://pixabay.com/en/marigold-calendula-orange-blossom-1568646/
+	
+10. Owl Slider
+	- MIT License
+	- https://owlcarousel2.github.io/OwlCarousel2/
      
 	
 All Other Resources, apart from the ones mentioned above have been created by me fall under GPL v3 license of the theme.	
@@ -64,7 +68,7 @@ All Other Resources, apart from the ones mentioned above have been created by me
 ## Screenshot & Image Credits
 
 * Header Image - Cactus Pots
-https://www.pexels.com/photo/art-artistic-beautiful-bloom-311458/
+https://pixabay.com/en/marigold-calendula-orange-blossom-1568646/
 
 License: CC0
 Source: https://pixabay.com/en/service/terms/	
@@ -94,3 +98,24 @@ Source: https://pixabay.com/en/service/terms/
 - Version 0.95
   
   * Third Review Changes
+  
+- Version 0.96
+  * Fourth Review Changes
+  
+- Version 0.97
+  * Fifth Review Changes
+  
+- Version 0.98
+  * 500 Error Fixed
+  
+- Version 0.99
+  * Seventh Review Changes
+  
+- Version 0.991
+  * Eighth Review Changes
+  
+- Version 0.992
+  * Ninth Review Changes
+  
+- Version 0.993 
+  * Tenth Review Changes

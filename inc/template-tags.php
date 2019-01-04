@@ -59,7 +59,7 @@ if ( ! function_exists( 'adviso_posted_on' ) ) :
 endif;
 
 function adviso_time_ago() {
-	return human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ).' '.__( 'ago', 'adviso' );
+	return esc_html( human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ).' '.__( 'ago', 'adviso' ) );
 }
 
 if ( ! function_exists( 'adviso_posted_by' ) ) :

@@ -65,13 +65,16 @@ if ( ! function_exists( 'adviso_setup' ) ) :
             'default-color' => 'ffffff',
             'default-image' => '',
         ) ) );
+        
+        // Add Gutenberg Wide Image Support
+        add_theme_support('align-wide');
 
         // Add theme support for selective refresh for widgets.
         add_theme_support( 'customize-selective-refresh-widgets' );
 
         add_image_size('adviso-sq-thumb', 600,600, true );
         add_image_size('adviso-pop-thumb',330, 220, true );
-        add_image_size('offer-thumb', 540, 340, true );
+        add_image_size('adviso-offer-thumb', 542, 340, true );
         //add_image_size('product-thumb', 250, 400, true);
         /**
          * Add support for core custom logo.

@@ -756,14 +756,13 @@ body.home #site-navigation ul.menu > li:hover a {
 #secondary .widget ul,
 #footer-sidebar .widget ul {
   font-size: 13px;
-  margin-left: 0px;
-  padding: 8px 0;
+  margin-left: 20px;
 }
 #secondary .widget ul li,
 #footer-sidebar .widget ul li {
   font-size: 16px;
   list-style: none;
-  padding: 16px;
+  padding-top: 32px;
 }
 #secondary .widget ul li:last-child,
 #footer-sidebar .widget ul li:last-child {
@@ -804,6 +803,19 @@ body.home #site-navigation ul.menu > li:hover a {
 #secondary .search-submit,
 #footer-sidebar .search-submit {
   display: none;
+}
+#secondary .widget_nav_menu li,
+#footer-sidebar .widget_nav_menu li {
+  white-space: normal;
+}
+#secondary .widget_archive select,
+#footer-sidebar .widget_archive select,
+#secondary .widget_categories select,
+#footer-sidebar .widget_categories select,
+#secondary .widget_text select,
+#footer-sidebar .widget_text select {
+  width: 100%;
+  height: 3em;
 }
 #secondary .widget_tag_cloud .tagcloud a,
 #footer-sidebar .widget_tag_cloud .tagcloud a {
@@ -1409,6 +1421,10 @@ body.search-no-results #content .page-content form input[type="submit"] {
   padding: 7px 0;
   margin: 10px 0;
   line-height: 25px;
+  font-weight: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .adviso .item-container .out-thumb h3 a {
   font-size: 17px;

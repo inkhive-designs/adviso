@@ -38,7 +38,7 @@
                                     <?php if(has_post_thumbnail()):
                                         the_post_thumbnail('adviso-sq-thumb');
                                     else: ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder2.jpg" />
+                                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder2.jpg' ); ?> />
                                     <?php endif; ?>
                                 </div>
 								<div class="out-thumb mdl-card__supporting-text">
