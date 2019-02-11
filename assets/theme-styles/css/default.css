@@ -1302,18 +1302,21 @@ body.search-no-results #content .page-content form input[type="submit"] {
 }
 .grid .out-thumb .postedon {
   padding: 14px 0px;
+  font-weight: 700;
 }
 .grid .out-thumb .postedon a {
-  color: #777;
+  color: #666;
 }
-.grid .out-thumb .entry-excerpt {
+.grid .out-thumb .postedon .author {
+  float: right;
+}
+.grid .out-thumb p {
   color: #aaa;
   line-height: 1.6em;
-  font-weight: 300;
   font-size: 14px;
   letter-spacing: .04em;
 }
-.grid .out-thumb .entry-excerpt p {
+.grid .out-thumb p p {
   margin-top: 5px;
 }
 .grid .readmore {
@@ -1359,7 +1362,7 @@ body.search-no-results #content .page-content form input[type="submit"] {
   white-space: nowrap;
   color: #444;
 }
-.grid_2_column .out-thumb p.entry-excerpt {
+.grid_2_column .out-thumb p {
   color: #aaa;
   padding-right: 10%;
   font-weight: 300;

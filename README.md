@@ -3,7 +3,7 @@
 **Contributors:** inkhive
 **Requires at least:** WordPress 4.4  
 **Tested up to:** WordPress 5.0
-**Version:** 0.993
+**Version:** 0.996
 **License:** GPL v3
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html
 **Tags:** custom-background, two-columns, one-column, custom-colors, flexible-header, right-sidebar, grid-layout, custom-menu, sticky-post, theme-options, threaded-comments, translation-ready, featured-images, full-width-template, custom-header, footer-widgets, e-commerce
@@ -68,35 +68,29 @@ All Other Resources, apart from the ones mentioned above have been created by me
 ## Screenshot & Image Credits
 
 * Header Image - Cactus Pots
-https://pixabay.com/en/marigold-calendula-orange-blossom-1568646/
+https://pxhere.com/en/photo/1418846
 
 License: CC0
-Source: https://pixabay.com/en/service/terms/	
+Source: https://creativecommons.org/publicdomain/zero/1.0/	
 
 ## Changelog
 
 - Version 0.9
-
   * Initial release
   
 - Version 0.91
-
   * Completed the Theme
   
 - Version 0.92
-
   * Fixed Bugs
   
 - Version 0.93
-
   * First Review Changes
   
 - Version 0.94
-
   * Second Review Changes
   
 - Version 0.95
-  
   * Third Review Changes
   
 - Version 0.96
@@ -106,7 +100,7 @@ Source: https://pixabay.com/en/service/terms/
   * Fifth Review Changes
   
 - Version 0.98
-  * 500 Error Fixed
+  * Sixth Review Changes
   
 - Version 0.99
   * Seventh Review Changes
@@ -119,3 +113,15 @@ Source: https://pixabay.com/en/service/terms/
   
 - Version 0.993 
   * Tenth Review Changes
+  
+- Version 0.994
+  * Eleventh Review Changes
+  
+- Version 0.995
+  * Twelfth Review Changes
+  
+- Version 0.996
+  * Thirteenth Review Changes
+  
+- Version 0.997
+  * Screenshot Fixed
